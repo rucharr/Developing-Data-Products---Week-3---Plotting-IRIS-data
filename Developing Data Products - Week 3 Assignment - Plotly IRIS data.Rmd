@@ -1,0 +1,24 @@
+---
+title: "Developing Data Products - Week 3 - Iris data presentation"
+author: "Rucha Potkar"
+date: "2024-07-26"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+Using the IRIS dataset, we are plotting the sepal length (x-axis) and petal length (y-axis) across the species using the Plotly package.
+
+## Plotting IRIS Dataset using Plotly
+
+```{r plot, echo=FALSE}
+suppressPackageStartupMessages(library(plotly))
+plot_ly(data = iris, x = ~Sepal.Length, y = ~Petal.Length, 
+        color = ~Species,
+        type = "scatter", mode = "markers") %>%
+  layout(title = "IRIS Data")
+```
